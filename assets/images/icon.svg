@@ -1,0 +1,25 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#E6F4FE"/>
+  
+  <!-- Main circle -->
+  <circle cx="512" cy="512" r="450" fill="#20B2AA"/>
+  
+  <!-- Inner lighter circle for depth -->
+  <circle cx="512" cy="512" r="420" fill="#2ECDC4"/>
+  
+  <!-- Checkmark -->
+  <g transform="translate(512, 512)">
+    <!-- Left part of checkmark -->
+    <path d="M -120 0 L -40 80" stroke="#FFFFFF" stroke-width="80" stroke-linecap="round" fill="none"/>
+    <!-- Right part of checkmark -->
+    <path d="M -40 80 L 150 -80" stroke="#FFFFFF" stroke-width="80" stroke-linecap="round" fill="none"/>
+  </g>
+  
+  <!-- Accent circle in corner -->
+  <circle cx="850" cy="174" r="60" fill="#FF7FC0" opacity="0.8"/>
+  
+  <!-- Small decorative elements -->
+  <circle cx="120" cy="850" r="40" fill="#FF7FC0" opacity="0.6"/>
+  <circle cx="900" cy="900" r="30" fill="#20B2AA" opacity="0.3"/>
+</svg>

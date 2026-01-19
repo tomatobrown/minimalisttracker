@@ -1,50 +1,154 @@
-# Welcome to your Expo app 👋
+# End of Day (EOD) App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native app built with Expo to track daily habits and activities, then analyze trends over time.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Daily Check-ins**: Answer questions about your daily activities (e.g., "Did you drink alcohol?", "How many times did you poop?")
+- **Custom Questions**: Add your own questions to track custom metrics
+- **Trend Analysis**: View 30-day trends and statistics for all tracked items
+- **Local Storage**: All data is stored locally on your phone using AsyncStorage
+- **Cross-platform**: Works on iOS and Android
 
-   ```bash
-   npm install
-   ```
+## Getting Started
 
-2. Start the app
+### Prerequisites
 
-   ```bash
-   npx expo start
-   ```
+- Node.js (v14 or higher)
+- npm or yarn
+- Expo CLI (optional, but recommended)
 
-In the output, you'll find options to open the app in a
+### Installation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+1. Navigate to the project directory:
 ```bash
-npm run reset-project
+cd EODApp
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn more
+### Running the App
 
-To learn more about developing your project with Expo, look at the following resources:
+#### For iOS (macOS only):
+```bash
+npm run ios
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+#### For Android:
+```bash
+npm run android
+```
 
-## Join the community
+#### For Web:
+```bash
+npm run web
+```
 
-Join our community of developers creating universal apps.
+#### Using Expo Go (easiest for testing):
+```bash
+npm start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Then scan the QR code with Expo Go app (available on both iOS and Android app stores).
+
+## Project Structure
+
+```
+EODApp/
+├── app/                      # Expo Router app screens
+│   ├── (tabs)/
+│   │   ├── index.tsx        # Daily check-in screen
+│   │   ├── trends.tsx       # Trends & statistics screen
+│   │   └── settings.tsx     # Settings screen
+│   └── _layout.tsx
+├── src/
+│   ├── components/          # Reusable React components
+│   │   ├── QuestionForm.tsx # Main form for daily questions
+│   │   └── TrendChart.tsx   # Trend display component
+│   ├── storage/             # AsyncStorage utilities
+│   │   └── storage.ts       # Data persistence logic
+│   └── types/               # TypeScript type definitions
+├── assets/                  # App icons and images
+└── package.json
+```
+
+## Default Questions
+
+The app comes with 5 default questions:
+
+1. How many times did you poop today? (Number)
+2. Did you have sex today? (Yes/No)
+3. Did you drink alcohol today? (Yes/No)
+4. How many hours did you sleep? (Number)
+5. Did you exercise today? (Yes/No)
+
+You can add more custom questions in the Settings tab.
+
+## Data Storage
+
+All responses are stored locally on your device using React Native's AsyncStorage:
+
+- **Questions**: Stored in `@eod_questions` key
+- **Daily Responses**: Stored in `@eod_responses_YYYY-MM-DD` format
+
+No data is sent to any server - everything stays on your device.
+
+## Features Overview
+
+### Daily Check-in Tab
+- View all questions for the day
+- Answer yes/no questions, numeric questions, or text questions
+- Save responses with one tap
+- Edit responses anytime during the day
+
+### Trends Tab
+- View statistics for the last 30 days
+- See response rates and aggregated data
+- Monitor patterns and trends over time
+
+### Settings Tab
+- View all your questions
+- Add new custom questions (yes/no or numeric)
+- Delete questions you no longer want to track
+
+## Building for Production
+
+### iOS:
+```bash
+eas build --platform ios
+```
+
+### Android:
+```bash
+eas build --platform android
+```
+
+(Requires EAS CLI setup: `npm install -g eas-cli`)
+
+## Technologies Used
+
+- **React Native**: Cross-platform mobile app framework
+- **Expo**: Build system and development tools
+- **TypeScript**: Type-safe JavaScript
+- **AsyncStorage**: Local data persistence
+- **React Navigation**: Tab-based navigation
+
+## Future Enhancements
+
+- Cloud backup and sync
+- Export data to CSV
+- Graphs and charts
+- Notifications and reminders
+- Dark mode support
+- Data analysis and insights
+
+## License
+
+This project is open source and available under the MIT License.
+
+## Support
+
+For issues or feature requests, please create an issue in the repository.

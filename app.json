@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "EODApp",
+    "name": "End of Day",
     "slug": "EODApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,8 +8,18 @@
     "scheme": "eodapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "description": "Track your daily habits and wellness metrics. Log questions like sleep, exercise, hydration, and more to visualize trends and build healthy routines.",
+    "primaryColor": "#20B2AA",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.eodapp.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSUserTrackingUsageDescription": "We don't track you. This is just a required field.",
+        "NSCalendarsUsageDescription": "To schedule daily reminders for your check-ins.",
+        "NSLocationWhenInUseUsageDescription": "Not used in this app.",
+        "NSPhotoLibraryUsageDescription": "Not used in this app."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -43,6 +53,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "b1a69285-8a56-43a8-aada-9fd6f1739f2c"
+      }
     }
   }
 }
