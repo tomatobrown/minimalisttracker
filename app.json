@@ -58,7 +58,9 @@
       "router": {},
       "eas": {
         "projectId": "b1a69285-8a56-43a8-aada-9fd6f1739f2c"
-      }
+      },
+      "revenueCatIosApiKey": process.env.REVENUECAT_IOS_API_KEY,
+      "revenueCatAndroidApiKey": process.env.REVENUECAT_ANDROID_API_KEY
     }
   }
 }

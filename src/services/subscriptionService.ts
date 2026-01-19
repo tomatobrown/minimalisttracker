@@ -1,9 +1,10 @@
 import Purchases, { CustomerInfo, PurchasesPackage, LOG_LEVEL } from 'react-native-purchases';
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Constants from 'expo-constants';
 
-const IOS_API_KEY = 'test_lYeTWTQOtuKjCVVjLPSSQMEGtyr';
-const ANDROID_API_KEY = 'test_lYeTWTQOtuKjCVVjLPSSQMEGtyr';
+const IOS_API_KEY = Constants.expoConfig?.extra?.revenueCatIosApiKey || '';
+const ANDROID_API_KEY = Constants.expoConfig?.extra?.revenueCatAndroidApiKey || '';
 const FIRST_LAUNCH_KEY = '@eod_first_launch_date';
 const TRIAL_DAYS = 30;
 
