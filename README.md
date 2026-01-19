@@ -29,7 +29,7 @@ cd EODApp
 ```bash
 npm install
 ```
-
+ 
 ### Running the App
 
 #### For iOS (macOS only):
